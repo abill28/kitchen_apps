@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:kitchen_app/detailFood_page.dart';
 import 'package:kitchen_app/forgotPassword_page.dart';
 import 'package:kitchen_app/home.dart';
 import 'package:kitchen_app/register_page.dart';
 import 'login_page.dart';
+import 'package:kitchen_app/splashScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.teal,
       ),
-      home: HomePage(),
+      home: DetailFoodPage(),
     );
   }
 }

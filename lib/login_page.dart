@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kitchen_app/home.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -71,23 +72,21 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 height: 20,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Container(
-                  padding: EdgeInsets.all(20),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return HomePage();
+                    }));
+                  },
+                  child: Container(
+                     padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
                       color: Colors.teal,
                       borderRadius: BorderRadius.circular(15)),
-                  child: Center(
-                      child: Text(
-                    "Log In",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18),
+                    child: Center(
+                      child: Text("Login",style: TextStyle(fontSize: 17),)),
                   )),
-                ),
-              ),
               SizedBox(
                 height: 20,
               ),

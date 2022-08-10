@@ -1,82 +1,56 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatefulWidget{
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  List androidVers = [
+    {
+      "name": " Indonesian Fried Rice",
+      "desc": "Best Seller"
+    },
+     {
+      "name": "Indonesian Fried Rice 2",
+      "desc": "Best Seller"
+    },
+     {
+      "name": "Indonesian Fried Rice 3",
+      "desc": "Best Seller"
+    },
+     {
+      "name": "Indonesian Fried Rice 4",
+      "desc": "Best Seller"
+    }
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Container(
-        height: 100,
-        // color: Colors.black,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Icon(
-              Icons.home_outlined,
-              color: Colors.black,
-            ),
-             Icon(
-              Icons.supervisor_account_outlined,
-              color: Colors.black,
-            ),
-             Icon(
-              Icons.favorite_border_outlined,
-              color: Colors.black,
-            ),
-             Icon(
-              Icons.account_circle_outlined,
-              color: Colors.black,
-            )
-          ],
-        ),
+      appBar: AppBar(
+        title: Text("Recipe Food") ,
       ),
-      body: SafeArea(
-          child: DefaultTabController(
-        length: 3,
-        initialIndex: 0,
-        child: Column(
-          children: [
-            SizedBox(
-              height: 40,
-            ),
-            TabBar(
-              isScrollable: true,
-              tabs: [
-                Tab(
-                  text: 'New Recipes'.toUpperCase(),
-                ),
-                Tab(
-                  text: 'Favorites'.toUpperCase(),
-                ),
-                Tab(
-                  text: 'Categories'.toUpperCase(),
-                )
-              ],
-              labelColor: Colors.black,
-              indicatorColor: Colors.black,
-              unselectedLabelColor: Colors.grey,
-              labelPadding: EdgeInsets.symmetric(horizontal: 24),
-            ),
-            Expanded(
-              child: TabBarView(children: [
-                Container(
-                  child: Center(child: Text("New Recipes")),
-                ),
-                Container(
-                  child: Center(child: Text("Favorites")),
-                ),
-                Container(
-                  child: Center(child: Text("Categories")),
-                )
-              ]),
-            )
-          ],
-        ),
-      )),
+      body: ListView.separated(
+        itemCount: androidVers.length,
+        itemBuilder: (context, index) {
+          return dataList(androidVers[index]["name"],androidVers[index]["desc"]);
+        },
+        separatorBuilder: (context, index){
+          return Divider();
+        }
+      )
     );
   }
+}
+Widget dataList(String textData, String descData){
+  return ListTile(
+   leading: CircleAvatar(
+     backgroundColor: Colors.black87,
+     child: Icon(Icons.restaurant_menu_outlined),
+   ),
+   title: Text(textData),
+   subtitle: Text(descData),
+   trailing: Icon(Icons.keyboard_arrow_right),
+  );
 }

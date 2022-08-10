@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kitchen_app/home.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -119,6 +120,8 @@ class _RegisterPageState extends State<RegisterPage> {
                     style: TextStyle(
                         color: Colors.teal, fontWeight: FontWeight.bold),
                   ),
+                  
+                 
                 ],
               )
             ],
