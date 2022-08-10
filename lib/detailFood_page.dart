@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:kitchen_app/home.dart';
 import 'package:kitchen_app/register_page.dart';
 
 // ignore: use_key_in_widget_constructors
@@ -26,7 +27,10 @@ class _DetailFoodPageState extends State<DetailFoodPage> {
           // ignore: prefer_const_constructors
           color: Color(0xFF545D68),
           onPressed: () {
-            Navigator.of(context).pop();
+            Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return HomePage();
+                    }));
           },
         ),
         // ignore: prefer_const_literals_to_create_immutables
