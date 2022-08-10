@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:kitchen_app/comment_page.dart';
 import 'package:kitchen_app/home.dart';
 import 'package:kitchen_app/register_page.dart';
 
@@ -118,7 +119,7 @@ class _DetailFoodPageState extends State<DetailFoodPage> {
                 ElevatedButton( onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return RegisterPage();
+                      return CommentPage();
                     }));
                   }, child: Text("COMMENT")),
                 // ignore: avoid_unnecessary_containers

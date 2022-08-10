@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget{
@@ -51,6 +53,11 @@ Widget dataList(String textData, String descData){
    ),
    title: Text(textData),
    subtitle: Text(descData),
-   trailing: Icon(Icons.keyboard_arrow_right),
+   trailing: GestureDetector(
+    onDoubleTap: () {
+                  print('On Double Tap'); 
+                  },
+    child: Icon(Icons.keyboard_arrow_right)),
+   
   );
 }

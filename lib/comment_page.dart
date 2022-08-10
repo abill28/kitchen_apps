@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kitchen_app/detailFood_page.dart';
 
 class CommentPage extends StatefulWidget {
   @override
@@ -59,23 +60,12 @@ class _CommentPageState extends State<CommentPage> {
               SizedBox(
                 height: 20,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Container(
-                  padding: EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                      color: Colors.teal,
-                      borderRadius: BorderRadius.circular(15)),
-                  child: Center(
-                      child: Text(
-                    "Send Comment",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18),
-                  )),
-                ),
-              ),
+            ElevatedButton(  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return DetailFoodPage();
+                    }));
+                  }, child: Text("Send Comment")),
               SizedBox(
                 height: 20,
               ),
